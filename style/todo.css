@@ -1,14 +1,56 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: row;
 }
 
+.main-1{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-2{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-done {
+  height: 15px;
+}
+
+.mark {
+  border: 1px solid gray;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: default;
+}
+
+.js-todo-date,
+.js-add-placeholder {
+  border-radius: 10px;
+}
 
 .todo-grid,
 .js-input-css {
   display: grid;
-  grid-template-columns: 200px 150px 80px;
+  grid-template-columns: 160px 120px 100px 100px;
   gap: 10px;
   align-items: center;
+}
+
+.js-todo-result{
+  margin-left: 5px;
 }
 
 .js-input-css {
@@ -21,8 +63,9 @@ body {
   border: none;
   color: white;
   cursor: pointer;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-radius: 15px;
 }
 
 .js-Delete-Button {
@@ -32,4 +75,5 @@ body {
   cursor: pointer;
   padding-top: 10px;
   padding-bottom: 10px;
+  border-radius: 15px;
 }

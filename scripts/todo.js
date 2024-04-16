@@ -12,10 +12,11 @@ function  renderTodo(){
       <div>${name}</div>
       <div>${dueDate}</div>
         <button class="js-Delete-Button delete-button">Delete</button>
+        <input type="checkbox" class="check-done">
       `;
     todoListHTML += html;
   });
-
+  
   
     
   document.querySelector('.js-todo-result')

@@ -8,19 +8,31 @@
 </head>
 <body>
 
-<p>Todo list</p>
 
-<div class="js-input-css">
-  <input placeholder="Todo name" 
-    class="js-name-input js-add-placeholder">
 
-  <input type="date" 
-    class="js-todo-date">
+<div class="main-1">
+  <p>Todo list</p>
 
-  <button class="js-add-button add">Add</button>
+  <div class="js-input-css">
+    <input placeholder="Todo name" 
+      class="js-name-input js-add-placeholder">
+  
+    <input type="date" 
+      class="js-todo-date">
+  
+    <button class="js-add-button add">Add</button>
+    <h1 class="mark">Mark as done</h1>
+  </div>
+  
+  <div class="js-todo-result todo-grid"></div>
 </div>
 
-<div class="js-todo-result todo-grid"></div>
+<div class="main-2">
+  <p>Done List</p>
+  <div class="js-done-result done-grid"></div>
+</div>
+
+
 
   <script src="scripts/todo.js"></script>
 </body>
