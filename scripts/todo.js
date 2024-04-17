@@ -10,10 +10,9 @@ function renderDone (){
   doneList.forEach(function (doneObject, index){
     const { name, dueDate } = doneObject;
     let html = `
-      <div>${name}</div>
+      <div class="input-name">${name}</div>
       <div>${dueDate}</div>
-        <button class="js-Delete-Button delete-button-done">Delete</button>
-        <input type="checkbox" class="check-done" checked>
+        <button class="js-Delete-Button delete-button-done ">Delete</button>
       `;
     doneListHTML += html;
   });
@@ -40,10 +39,10 @@ function  renderTodo(){
   todoList.forEach(function (todoObject, index){
     const { name, dueDate } = todoObject;
     let html = `
-      <div>${name}</div>
-      <div>${dueDate}</div>
-        <button class="js-Delete-Button delete-button">Delete</button>
-        <input type="checkbox" class="check-done">
+        <div class="input-name">${name}</div>
+        <div>${dueDate}</div>
+          <button class="js-Delete-Button delete-button">Delete</button>
+          <input type="checkbox" class="check-done">
       `;
     todoListHTML += html;
   });
