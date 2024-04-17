@@ -1,7 +1,37 @@
 const todoList = [];
-const doneList = [];
+const doneList = []; 
 
+renderDone();
 renderTodo();
+
+function renderDone (){
+  let doneListHTML = '';
+
+  doneList.forEach(function (doneObject, index){
+    const { name, dueDate } = doneObject;
+    let html = `
+      <div>${name}</div>
+      <div>${dueDate}</div>
+        <button class="js-Delete-Button delete-button-done">Delete</button>
+        <input type="checkbox" class="check-done" checked>
+      `;
+    doneListHTML += html;
+  });
+  document.querySelector('.js-done-result')
+          .innerHTML = doneListHTML;
+     
+
+          
+    document.querySelectorAll('.delete-button-done')
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener('click', () => {
+        doneList.splice(index, 1);
+        renderDone();
+      });
+  });
+}
+  
+
 
 function  renderTodo(){
   let todoListHTML = '';
@@ -22,10 +52,22 @@ function  renderTodo(){
     
   document.querySelector('.js-todo-result')
     .innerHTML = todoListHTML;
-  document.querySelector('.js-done-result')
-    .innerHTML = doneList;
   
-  
+
+    document.querySelectorAll('.check-done')
+      .forEach((checkButton, index) => {
+        checkButton.addEventListener('change', (event) => {
+          const isChecked = event.target.checked;
+          if (isChecked) {
+          let element = todoList.splice(index, 1)[0];
+          doneList.push(element);
+          renderTodo();
+          renderDone();
+          }
+        });
+      
+        
+    });
 
     document.querySelectorAll('.delete-button')
       .forEach((deleteButton, index) => {
@@ -33,16 +75,6 @@ function  renderTodo(){
           todoList.splice(index, 1);
           renderTodo();
         });
-
-        document.querySelectorAll('.check-done').forEach((check, index) => {
-          check.addEventListener('click', () => {
-            doneList.push(index, 1);
-            todoList.splice(index, 1);
-            document.querySelector('.js-done-result')
-              .innerHTML = doneList;
-            renderTodo();
-          })
-        })
     });
 }
 
@@ -70,7 +102,6 @@ function addTodo(){
     name,
     dueDate});
   inputElement.value = '';
-
   renderTodo();
 }
 
